@@ -1,4 +1,4 @@
-import { Router } from "express";
+import { request, Router } from "express";
 
 import { createUserController } from "../modules/users/useCases/createUser";
 import { listAllUsersController } from "../modules/users/useCases/listAllUsers";
