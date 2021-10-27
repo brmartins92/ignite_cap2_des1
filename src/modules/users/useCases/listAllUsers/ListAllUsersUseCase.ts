@@ -12,13 +12,12 @@ class ListAllUsersUseCase {
     const user = this.usersRepository.findById(user_id);
 
     if (!user) {
-      return [];
+      throw new Error("Mensagem do erro");
     } else {
       if (user.admin) {
         return this.usersRepository.list();
-      } else {
-        return [];
       }
+      throw new Error("Mensagem do erro");
     }
   }
 }
