@@ -48,7 +48,9 @@ Para que esse teste passe, é necessário que o método execute do arquivo src/m
  
  Para que esse teste passe, é necessário que o método execute do arquivo src/modules/users/useCases/createUser/CreateUserUseCase.ts não permita que um usuário seja criado caso já exista um usuário com o mesmo email e, nesse caso, lance um erro no seguinte formato:
  
- ##  throw new Error("Mensagem do erro");
+    ```tsx
+    throw new Error("Mensagem do erro");
+    ```
  
  - **Should be able to turn an user as admin**
     
