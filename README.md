@@ -44,11 +44,11 @@ A rota deve receber, pelo header da requisição, uma propriedade `user_id` cont
 
 Para que esse teste passe, é necessário que o método execute do arquivo src/modules/users/useCases/createUser/CreateUserUseCase.ts receba name e email do usuário a ser criado, crie o usuário através do método create do repositório e retorne o usuário criado.
   
-- **Should not be able to create new users when email is already taken**
+ - **Should not be able to create new users when email is already taken**
  
- Para que esse teste passe, é necessário que o método execute do arquivo src/modules/users/useCases/createUser/CreateUserUseCase.ts não permita que um usuário seja criado caso já exista um usuário com o mesmo email e, nesse caso, lance um erro no seguinte formato:
+     Para que esse teste passe, é necessário que o método execute do arquivo src/modules/users/useCases/createUser/CreateUserUseCase.ts não permita que um usuário seja criado caso já exista um usuário com o mesmo email e, nesse caso, lance um erro no seguinte formato:
  
-    ```tsx
+     ```tsx
     throw new Error("Mensagem do erro");
     ```
  
