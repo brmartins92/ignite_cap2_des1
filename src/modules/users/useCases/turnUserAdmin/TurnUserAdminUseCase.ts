@@ -13,6 +13,7 @@ class TurnUserAdminUseCase {
     if (!userExist) {
       throw new Error("Mensagem do erro");
     }
+
     if (user_id) {
       const user = this.usersRepository.turnAdmin(userExist);
       return user;

@@ -9,17 +9,20 @@ interface IRequest {
 class CreateUserUseCase {
   constructor(private usersRepository: IUsersRepository) {}
 
-  execute({ email, name }: IRequest): void {
+  execute({ email, name }: IRequest): User {
+    let user: any;
     const emailExist = this.usersRepository.findByEmail(email);
+
     if (emailExist) {
       throw new Error("Mensagem do erro");
     }
-    if (email && name) {
-      const user = this.usersRepository.create({ name, email });
-      return user;
+
+    if (email || name) {
+      user = this.usersRepository.create({ name, email });
     } else {
       throw new Error("Mensagem do erro");
     }
+    return user;
   }
 }
 
