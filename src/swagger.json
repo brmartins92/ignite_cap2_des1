@@ -88,9 +88,14 @@
             "get": {
                 "tags": ["User"],
                 "summary": "All User",
-                "description": "All category",
+                "description": "All user",
+                "parameters": [{
+                    "in": "header",
+                    "name": "user_id",
+                    "required": "true"
+                }],
                 "responses": {
-                    "200": {
+                    "201": {
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -117,6 +122,24 @@
                                                 "type": "date"
                                             }
                                         }
+                                    }
+
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "error": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "example": {
+                                        "error": "message of error"
                                     }
 
                                 }
