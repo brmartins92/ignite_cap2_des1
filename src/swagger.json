@@ -1,0 +1,259 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "User Sign  Documentation",
+        "description": "Api User Sign",
+        "version": "1.0.0",
+        "contact": {
+            "email": "brmartins92@gmail.com"
+        }
+    },
+    "paths": {
+        "/users": {
+            "post": {
+                "tags": ["User"],
+                "summary": "Create a user",
+                "description": "Create a new user",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "type": "string"
+                                    }
+                                },
+                                "example": {
+                                    "name": "Bruno",
+                                    "email": "brmartins2"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "id": {
+                                            "type": "string"
+                                        },
+                                        "name": {
+                                            "type": "string"
+                                        },
+                                        "email": {
+                                            "type": "string"
+                                        },
+                                        "admin": {
+                                            "type": "bolean"
+                                        },
+                                        "created_at": {
+                                            "type": "date"
+                                        },
+                                        "updated_at": {
+                                            "type": "date"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "error": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "example": {
+                                        "error": "message of error"
+                                    }
+
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "get": {
+                "tags": ["User"],
+                "summary": "All User",
+                "description": "All category",
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "id": {
+                                                "type": "string"
+                                            },
+                                            "name": {
+                                                "type": "string"
+                                            },
+                                            "email": {
+                                                "type": "string"
+                                            },
+                                            "admin": {
+                                                "type": "bolean"
+                                            },
+                                            "created_at": {
+                                                "type": "date"
+                                            },
+                                            "updated_at": {
+                                                "type": "date"
+                                            }
+                                        }
+                                    }
+
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/users/{id}": {
+            "get": {
+                "tags": ["User"],
+                "summary": "Get User",
+                "description": "Get user",
+                "parameters": [{
+                    "in": "path",
+                    "name": "id",
+                    "required": "true"
+                }],
+                "responses": {
+                    "201": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "id": {
+                                            "type": "string"
+                                        },
+                                        "name": {
+                                            "type": "string"
+                                        },
+                                        "email": {
+                                            "type": "string"
+                                        },
+                                        "admin": {
+                                            "type": "bolean"
+                                        },
+                                        "created_at": {
+                                            "type": "date"
+                                        },
+                                        "updated_at": {
+                                            "type": "date"
+                                        }
+                                    }
+
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "error": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "example": {
+                                        "error": "message of error"
+                                    }
+
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+        },
+        "/users/{id}/admin": {
+            "patch": {
+                "tags": ["User"],
+                "summary": "Update User",
+                "description": "Update User to Admin",
+                "parameters": [{
+                    "in": "path",
+                    "name": "id",
+                    "required": "true"
+                }],
+                "responses": {
+                    "201": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "id": {
+                                            "type": "string"
+                                        },
+                                        "name": {
+                                            "type": "string"
+                                        },
+                                        "email": {
+                                            "type": "string"
+                                        },
+                                        "admin": {
+                                            "type": "bolean"
+                                        },
+                                        "created_at": {
+                                            "type": "date"
+                                        },
+                                        "updated_at": {
+                                            "type": "date"
+                                        }
+                                    }
+
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "error": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "example": {
+                                        "error": "message of error"
+                                    }
+
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+
+    }
+
+
+}
